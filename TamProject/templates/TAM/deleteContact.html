@@ -1,0 +1,13 @@
+{% extends 'TAM/main.html' %}
+{% load static %}
+
+
+{% block content %}
+<p> Are you sure you want to delete {{ contact }}</p>
+
+    <form action="{% url 'TAM:deleteContact.html' contact.id %}" method="POST">
+        {% csrf_token %}
+        <a href="{% url 'home' %}"> Cancel</a>
+        <input type="submit" name="Submit">
+    </form>
+{% endblock %}

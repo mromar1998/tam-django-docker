@@ -1,0 +1,11 @@
+{% extends  'TAM/main.html' %}
+{% load static %}
+
+    {% block content %}
+        {% for con in contact %}
+            <a href="{% url 'TAM:ContactD' con.id %}">View</a>
+            <p>Contact Name : {{ con.name }}</p>
+
+        {% endfor %}
+
+    {% endblock %}
